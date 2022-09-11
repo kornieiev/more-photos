@@ -1,0 +1,56 @@
+.list {
+  list-style: none;
+  /*забирає крапку перед списком*/
+  padding: 0;
+}
+
+.gallery {
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px solid red;
+  width: 1142px;
+}
+
+.grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.item4 {
+  @include mobile {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* .hidden {
+  @media screen and (max-width: 1200px) {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+  }
+} */
+
+@mixin mobile {
+  @media screen and (min-width: 420px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1439px) {
+    @content;
+  }
+}
